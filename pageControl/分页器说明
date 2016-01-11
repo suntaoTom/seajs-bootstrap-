@@ -1,0 +1,25 @@
+1、这里我没有将jQuery用seajs方式引入，而是直接script标签引用，如果有需要的同学可以在Pagesed.js里进行jQuery引入，然后在进行压缩引用即可
+2、分页器用到的样式毕竟少数，如果同学只需要一部分bootstrap里的样式，可以从里面提取出来，这样网页速度就更快了，这里小编就懒了一下，我这里用的是最新的bootstrap
+3、lastPage那里是设置分页器的总页数的，这个是从后台渲染到页面中的
+
+
+使用说明：
+同学们使用的时候，只需要注意配置以下几处：
+1、lastPage总页数
+2、别的文件需要分页的值时，只要在Pagesed.js文件里写入如下：（ 注：我main文件里的查询方法queryResult需要查询的第几页。）
+
+     1）、
+        引入依赖文件，提示：seajs是不支持文件相互依赖的。我这里引入的main文件
+        var main = require('./main')
+     2）、
+       在Pagesed.js文件的external接口里写入调用依赖文件的方法，我这里的是调用main文件里的queryResult方法，并将页数pagenum传到了main文件的queryResult方法里。
+        external:function(pagenum){
+             //调用外部接口，需要当前页pagenum参数都在这里配置
+             main.queryResult(pagenum);
+         },
+      3)、
+       同时小编还为你们考虑了一下，如果页面你们不想显示7个分页，只需要删除或者增加<li><a href="#"></a></li>标签即可
+
+    以上效果，同学们可以将页面引入的Pagesed.mini改为Pagesed.js
+
+                                                                作者：孙涛（梦魇）

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../seajs-3.0.0/dist/sea.js"></script>
+    <script src="../jQuery/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<h1>Bootstrap和seajs结合的分页器，IT梦魇版</h1>
+<a href="http://blog.csdn.net/u014080304" target="_blank">孙涛博客</a>
+<nav class="fot-ye">
+    第<span id='currentPage'>1</span>页/<span id='lastPage'>23</span>页
+    <ul class="pagination ">
+        <li class="disabled"><a href="#" id='back'>&laquo;</a> </li>
+        <li class="active" ><a href="#" id='pagehead' >1</a> </li>
+        <li><a href="#" >2</a> </li>
+        <li><a href="#" >3</a> </li>
+        <li><a href="#" >4</a> </li>
+        <li><a href="#" >5</a> </li>
+        <li><a href="#" >6</a> </li>
+        <li><a href="#" id='pageend'>7</a> </li>
+        <li><a href="#" id='next'>&raquo;</a> </li>
+        <li>跳转至第
+            <select class= "selectpicker " style=' border-radius: 4px;margin-top:14px;' >
+            </select>
+            页
+            <button class="btn btn-default seletgo" style='margin: -16px 0 0 0;'>go</button>
+        </li>
+    </ul>
+</nav>
+</body>
+<script>
+    seajs.use("../page/Pagesed.mini");
+
+</script>
+
+</html>
